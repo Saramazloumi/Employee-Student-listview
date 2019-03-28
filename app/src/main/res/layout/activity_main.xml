@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textViewCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="70dp"
+        android:textSize="30sp"
+        android:text="List Of " />
+
+    <EditText
+        android:id="@+id/editTextCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/textViewCaption"
+        app:layout_constraintBottom_toBottomOf="@id/textViewCaption"
+        app:layout_constraintStart_toEndOf="@id/textViewCaption"
+        android:ems="6"
+        android:inputType="textPersonName"
+        android:textSize="30sp"
+        android:text="" />
+
+    <ListView
+        android:id="@+id/listViewES"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewCaption"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="50dp"
+        android:listSelector="@drawable/listviewselectro"
+        style="@style/listView_style" />
+
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/listViewES"
+        app:layout_constraintStart_toEndOf="@id/listViewES"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/editTextId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/textViewId"
+        app:layout_constraintBottom_toBottomOf="@id/textViewId"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:ems="7"
+        android:inputType="number"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewId"
+        app:layout_constraintStart_toStartOf="@id/textViewId"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        android:text="Age: " />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/textViewAge"
+        app:layout_constraintBottom_toBottomOf="@id/textViewAge"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:ems="7"
+        android:inputType="number"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textViewJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewAge"
+        app:layout_constraintStart_toStartOf="@id/textViewAge"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        android:text="Job: " />
+
+    <EditText
+        android:id="@+id/editTextJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/textViewJob"
+        app:layout_constraintBottom_toBottomOf="@id/textViewJob"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:ems="7"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textViewSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewJob"
+        app:layout_constraintStart_toStartOf="@id/textViewJob"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        android:text="salary: " />
+
+    <EditText
+        android:id="@+id/editTextSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/textViewSalary"
+        app:layout_constraintBottom_toBottomOf="@id/textViewSalary"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:ems="7"
+        android:inputType="number"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textViewProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewSalary"
+        app:layout_constraintStart_toStartOf="@id/textViewSalary"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        android:text="Program: " />
+
+    <EditText
+        android:id="@+id/editTextProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/textViewProgram"
+        app:layout_constraintTop_toTopOf="@id/textViewProgram"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:ems="7"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnStudents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:text="Students" />
+
+    <Button
+        android:id="@+id/btnEmployees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Employees" />
+
+    <Button
+        android:id="@+id/btnAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:text="All" />
+</android.support.constraint.ConstraintLayout>
