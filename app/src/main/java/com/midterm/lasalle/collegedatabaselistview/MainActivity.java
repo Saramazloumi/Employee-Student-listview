@@ -34,6 +34,8 @@ DialogInterface.OnClickListener{
     ArrayAdapter<Employee> adapterEmployee;
     ArrayAdapter<Person> adapterPerson;
 
+    String flag = "a";
+
     AlertDialog.Builder alertDialog;
 
     int currentPosition;
@@ -109,6 +111,7 @@ DialogInterface.OnClickListener{
                 textViewId.setText("Student ID: ");
                 listViewES.setAdapter(adapterStudent);
                 adapterStudent.notifyDataSetChanged();
+                flag = "s";
                 break;
 
             case R.id.btnEmployees:
@@ -123,6 +126,7 @@ DialogInterface.OnClickListener{
                 textViewId.setText("Emp. ID: ");
                 listViewES.setAdapter(adapterEmployee);
                 adapterEmployee.notifyDataSetChanged();
+                flag = "e";
                 break;
 
             case R.id.btnAll:
@@ -138,9 +142,9 @@ DialogInterface.OnClickListener{
                 textViewId.setText("ID : ");
                 listViewES.setAdapter(adapterPerson);
                 adapterPerson.notifyDataSetChanged();
+                flag = "a";
                 break;
         }
-
     }
 
     @Override
@@ -148,19 +152,23 @@ DialogInterface.OnClickListener{
 
         int index = position;
 
-          if (listOfPersons.get(position).getClass().equals(Student.class)) {
+          if (flag.equals("a") && listOfPersons.get(position).getClass().equals(Student.class)) {
             for (int i = 0; i < lisOfStudents.size(); i++) {
                 if (lisOfStudents.get(i).getName().equals(listOfPersons.get(position).getName()))
                     index = i;
             }
             getStudent(index);
 
-        } else if(listOfPersons.get(position).getClass().equals(Employee.class)){
+        } else if(flag.equals("a") && listOfPersons.get(position).getClass().equals(Employee.class)){
               for(int i = 0; i < listOfEmployees.size(); i ++){
                   if(listOfEmployees.get(i).getName().equals(listOfPersons.get(position).getName()))
                       index = i;
               }
               getEmployee(index);
+          }else if (flag.equals("s")){
+              getStudent(position);
+          }else if (flag.equals("e")){
+              getEmployee(position);
           }
     }
 
@@ -242,10 +250,8 @@ DialogInterface.OnClickListener{
                                adapterPerson.notifyDataSetChanged();
                            }
                        }
-
                        break;
                }
-
                 break;
 
             case Dialog.BUTTON_NEGATIVE:
